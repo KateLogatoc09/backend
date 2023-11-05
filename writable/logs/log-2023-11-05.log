@@ -1,0 +1,120 @@
+CRITICAL - 2023-11-05 10:51:34 --> Undefined variable $hotels
+in APPPATH\Controllers\Listing.php on line 18.
+ 1 APPPATH\Controllers\Listing.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $hotels', 'C:\\laragon\\www\\backend\\app\\Controllers\\Listing.php', 18)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Listing->ListAll()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Listing))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-05 10:53:47 --> Call to undefined method App\Controllers\Listing::respond()
+in APPPATH\Controllers\Listing.php on line 20.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Listing->ListAll()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Listing))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-05 10:58:11 --> Call to undefined method App\Controllers\Listing::respond()
+in APPPATH\Controllers\Listing.php on line 20.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Listing->ListAll()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Listing))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-05 10:59:36 --> Call to undefined method App\Controllers\Listing::respond()
+in APPPATH\Controllers\Listing.php on line 20.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Listing->ListAll()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Listing))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-05 15:25:07 --> Too few arguments to function CodeIgniter\Database\BaseBuilder::join(), 1 passed in C:\laragon\www\backend\app\Controllers\Listing.php on line 28 and at least 2 expected
+in SYSTEMPATH\Database\BaseBuilder.php on line 617.
+ 1 APPPATH\Controllers\Listing.php(28): CodeIgniter\Database\BaseBuilder->join('hotels.account_id = ratings.account_id')
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Listing->Ratings()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Listing))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-11-05 15:26:43 --> mysqli_sql_exception: Not unique table/alias: 'hotels_resorts' in C:\laragon\www\backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\backend\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `name`, ...', 0)
+#1 C:\laragon\www\backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `name`, ...')
+#2 C:\laragon\www\backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `name`, ...')
+#3 C:\laragon\www\backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `name`, ...', Array, false)
+#4 C:\laragon\www\backend\app\Controllers\Listing.php(31): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\backend\system\CodeIgniter.php(919): App\Controllers\Listing->Ratings()
+#6 C:\laragon\www\backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Listing))
+#7 C:\laragon\www\backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\backend\public\index.php(85): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-11-05 15:26:43 --> Not unique table/alias: 'hotels_resorts'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `name`, MAX(`ratings`.`account_id`) AS `account_id`, AVG(`rating`) AS `rating`
+FROM `hotels_resorts`
+JOIN `hotels_resorts` ON `hotels_resorts`.`account_id` = `ratings`.`account_id`
+GROUP BY `name`
+ORDER BY `name`', [], false)
+ 2 APPPATH\Controllers\Listing.php(31): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Listing->Ratings()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Listing))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-11-05 15:30:35 --> mysqli_sql_exception: Not unique table/alias: 'hotels_resorts' in C:\laragon\www\backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\backend\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `name`, ...', 0)
+#1 C:\laragon\www\backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `name`, ...')
+#2 C:\laragon\www\backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `name`, ...')
+#3 C:\laragon\www\backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `name`, ...', Array, false)
+#4 C:\laragon\www\backend\app\Controllers\Listing.php(31): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\backend\system\CodeIgniter.php(919): App\Controllers\Listing->Ratings()
+#6 C:\laragon\www\backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Listing))
+#7 C:\laragon\www\backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\backend\public\index.php(85): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-11-05 15:30:35 --> Not unique table/alias: 'hotels_resorts'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `name`, MAX(`ratings`.`account_id`) AS `account_id`, AVG(`rating`) AS `rating`
+FROM `hotels_resorts`
+JOIN `hotels_resorts` ON `hotels_resorts`.`account_id` = `ratings`.`account_id`
+GROUP BY `name`
+ORDER BY `name`', [], false)
+ 2 APPPATH\Controllers\Listing.php(31): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Listing->Ratings()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Listing))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-11-05 15:31:58 --> mysqli_sql_exception: Not unique table/alias: 'hotels_resorts' in C:\laragon\www\backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\backend\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `name`, ...', 0)
+#1 C:\laragon\www\backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `name`, ...')
+#2 C:\laragon\www\backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `name`, ...')
+#3 C:\laragon\www\backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `name`, ...', Array, false)
+#4 C:\laragon\www\backend\app\Controllers\Listing.php(31): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\backend\system\CodeIgniter.php(919): App\Controllers\Listing->Ratings()
+#6 C:\laragon\www\backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Listing))
+#7 C:\laragon\www\backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\backend\public\index.php(85): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-11-05 15:31:58 --> Not unique table/alias: 'hotels_resorts'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `name`, MAX(`ratings`.`account_id`) AS `account_id`, AVG(`rating`) AS `rating`
+FROM `hotels_resorts`
+INNER JOIN `hotels_resorts` ON `hotels_resorts`.`account_id` = `ratings`.`account_id`
+GROUP BY `name`
+ORDER BY `name`', [], false)
+ 2 APPPATH\Controllers\Listing.php(31): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Listing->Ratings()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Listing))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-05 15:41:19 --> syntax error, unexpected variable "$query"
+in APPPATH\Controllers\Listing.php on line 40.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\laragon\\www\\backend\\app\\Controllers\\Listing.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Listing')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Listing')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\Listing', true)
+ 5 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-05 15:46:03 --> Undefined property: App\Controllers\Listing::$ratings
+in APPPATH\Controllers\Listing.php on line 24.
+ 1 APPPATH\Controllers\Listing.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Listing::$ratings', 'C:\\laragon\\www\\backend\\app\\Controllers\\Listing.php', 24)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Listing->Ratings()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Listing))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
