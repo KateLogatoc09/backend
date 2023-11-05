@@ -1,0 +1,6 @@
+CRITICAL - 2023-11-01 03:36:52 --> Class "App\Model\MainModel" not found
+in APPPATH\Controllers\MainController.php on line 18.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MainController->getData()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(85): CodeIgniter\CodeIgniter->run()
